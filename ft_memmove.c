@@ -6,18 +6,17 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:47:08 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/26 14:47:28 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:48:50 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	const char	*str;
 	char		*strdst;
-	int			i;
+	size_t		i;
 
 	str = src;
 	strdst = dst;

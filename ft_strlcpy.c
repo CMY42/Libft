@@ -6,18 +6,17 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:53:38 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/26 14:50:45 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:49:23 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	char		*dt;
 	const char	*sc;
-	int			i;
+	size_t		i;
 
 	i = 0;
 	dt = dst;

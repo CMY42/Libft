@@ -6,12 +6,11 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:08:40 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/25 13:17:03 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:36:56 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include "libft.h"
 
 void	*ft_bzero(void *s, size_t n)
 {

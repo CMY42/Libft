@@ -6,12 +6,11 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:14:46 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/26 13:39:55 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:42:35 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <ctype.h>*/
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

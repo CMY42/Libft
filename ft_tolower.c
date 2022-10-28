@@ -6,12 +6,11 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:40:16 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/26 14:29:43 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:42:22 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <ctype.h>*/
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

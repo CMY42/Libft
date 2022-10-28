@@ -6,12 +6,11 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:30:09 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/26 15:38:22 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:40:03 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

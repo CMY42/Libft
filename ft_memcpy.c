@@ -6,18 +6,17 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:17:20 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/25 14:46:48 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:48:14 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	const char	*str;
 	char		*strdst;
-	int			i;
+	size_t		i;
 
 	str = src;
 	strdst = dst;

@@ -6,13 +6,11 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:38:58 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/27 15:46:15 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:40:23 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>*/
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
