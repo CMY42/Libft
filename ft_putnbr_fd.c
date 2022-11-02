@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 15:40:18 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/02 17:30:37 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/02 13:10:31 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/02 13:36:17 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	while (*s != '\0')
-		s++;
-	s--;
-	while (*s)
+	if (n == -2147483648)
 	{
-		if (*s == c)
-			return ((char *) s);
-		s--;
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd ('2', fd);
+		ft_putnbr_fd (147483648, fd);
 	}
-	return (NULL);
+	else if (n >= 0 && n < 10)
+		ft_putchar_fd (n + 48, fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd ('-', fd);
+		ft_putnbr_fd (n * (-1), fd);
+	}
+	else
+	{
+		ft_putnbr_fd (n / 10, fd);
+		ft_putnbr_fd (n % 10, fd);
+	}
 }
-
-/*int main ()
-{
-	char *s = "Hello World World";
-	printf("%s\n", (ft_strrchr(s, 'W')));
-	printf("%s\n", (strrchr(s, 'W')));
-}*/

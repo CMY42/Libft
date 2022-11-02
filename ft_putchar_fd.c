@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 15:40:18 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/02 17:30:37 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/02 12:44:39 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/02 12:55:29 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	while (*s != '\0')
-		s++;
-	s--;
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *) s);
-		s--;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }
-
-/*int main ()
-{
-	char *s = "Hello World World";
-	printf("%s\n", (ft_strrchr(s, 'W')));
-	printf("%s\n", (strrchr(s, 'W')));
-}*/

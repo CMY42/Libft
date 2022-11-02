@@ -1,46 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:47:08 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/02 17:03:39 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/02 13:47:21 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/02 14:38:53 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
+	char	*fin;
 
 	i = 0;
-	if (dst == NULL && src == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	if (dst < src)
+	fin = (char *)malloc((ft_strlen (s1) + ft_strlen (s2) + 1));
+	if (!fin)
+		return (NULL);
+	while (*s1)
 	{
-		while (i < len)
-		{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		fin[i] = *s1;
+		s1++;
 		i++;
-		}
 	}
-	else
+	while (*s2)
 	{
-		while (i != len)
-		{
-			((unsigned char *)dst)[len - i - 1]
-				= ((unsigned char *)src)[len - i - 1];
-			i++;
-		}
+		fin[i] = *s2;
+		s2++;
+		i++;
 	}
-	return (dst);
+	fin[i] = '\0';
+	return (fin);
 }
-
-/*int main(int argc, char **argv)
-{
-	printf("%s\n",(memmove(argv[1], argv[2], 4)));
-	printf("%s\n",(ft_memmove(argv[1], argv[2], 4)));
-}*/

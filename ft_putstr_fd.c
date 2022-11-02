@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 10:53:38 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/02 15:56:09 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/02 12:55:51 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/02 13:02:50 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*sc;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	sc = (char *)src;
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	if (dstsize > 0)
+	while (s[i] != '\0')
 	{
-		while (sc[i] != '\0' && i < dstsize - 1)
-		{
-				dst[i] = sc[i];
-				i++;
-		}
-	}
-	dst[i] = '\0';
-	while (sc[i] != '\0')
+		write(fd, &s[i], 1);
 		i++;
-	return (i);
+	}
 }
-
-/*int main (int argc, char **argv)
-{
-	printf("%lu\n",(ft_strlcpy(argv[1], argv[2], 5)));
-	printf("%lu\n",(strlcpy(argv[1], argv[2], 5)));
-}*/

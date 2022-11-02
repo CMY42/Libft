@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:47:08 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/02 17:03:39 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/02 09:57:56 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/02 15:15:31 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/*#include <stdio.h>
+#include <string.h>*/
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	char	*str;
 
 	i = 0;
-	if (dst == NULL && src == NULL)
+	if (!s)
 		return (NULL);
-	if (dst < src)
+	if (ft_strlen(s) < start)
+		len = '\0';
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
+	while (len != '\0')
 	{
-		while (i < len)
-		{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		str[i] = s[start];
 		i++;
-		}
+		start++;
+		len--;
 	}
-	else
-	{
-		while (i != len)
-		{
-			((unsigned char *)dst)[len - i - 1]
-				= ((unsigned char *)src)[len - i - 1];
-			i++;
-		}
-	}
-	return (dst);
+	str[i] = '\0';
+	return (str);
 }
 
-/*int main(int argc, char **argv)
+/*int main()
 {
-	printf("%s\n",(memmove(argv[1], argv[2], 4)));
-	printf("%s\n",(ft_memmove(argv[1], argv[2], 4)));
+	printf("%s", ft_substr("qwerty", 400, 5));
 }*/

@@ -6,7 +6,7 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:17:20 by cmansey           #+#    #+#             */
-/*   Updated: 2022/10/28 14:48:14 by cmansey          ###   ########.fr       */
+/*   Updated: 2022/11/02 17:05:32 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	str = src;
 	strdst = dst;
 	i = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		strdst[i] = str[i];
