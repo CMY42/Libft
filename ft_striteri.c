@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 15:40:18 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/03 11:31:09 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/03 12:21:18 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/03 12:48:08 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*str;
+	unsigned int	i;
 
-	str = NULL;
-	while (*s != '\0')
+	i = 0;
+	if (s)
 	{
-		if (*s == (char)c)
-			str = (char *)s;
-		s++;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
-	if (*s == (char)c)
-		return ((char *)s);
-	if (c == 0)
-		return ((char *)s);
-	return ((char *)str);
 }
-
-/*int main ()
-{
-	char *s = "Hello World World";
-	printf("%s\n", (ft_strrchr(s, 'W')));
-	printf("%s\n", (strrchr(s, 'W')));
-}*/

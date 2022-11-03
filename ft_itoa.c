@@ -1,38 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 15:40:18 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/03 11:31:09 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/03 13:21:33 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/03 16:39:17 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+size_t	ft_nb(int nb)
 {
-	char	*str;
+	int	i;
 
-	str = NULL;
-	while (*s != '\0')
+	i = 0;
+	if (nb <= 0)
+		i++;
+	while (nb != '\0')
 	{
-		if (*s == (char)c)
-			str = (char *)s;
-		s++;
+		nb = nb / 10;
+		i++;
 	}
-	if (*s == (char)c)
-		return ((char *)s);
-	if (c == 0)
-		return ((char *)s);
-	return ((char *)str);
+	return (i);
 }
 
-/*int main ()
+char	*ft_itoa(int n)
 {
-	char *s = "Hello World World";
-	printf("%s\n", (ft_strrchr(s, 'W')));
-	printf("%s\n", (strrchr(s, 'W')));
-}*/
+	int				i;
+	char			*str;
+	long int		nb;
+
+	i = ft_nb(n);
+	nb = n;
+	str = malloc(i + 1);
+	if (!str)
+		return (NULL);
+	if (nb < 0)
+	{
+		*str = '-';
+		nb *= -1;
+	}
+	if (nb == 0)
+		*str = '0';
+	str[i] = '\0';
+	i--;
+	while (nb != '\0')
+	{
+		str[i] = nb % 10 + 48;
+		i--;
+		nb = nb / 10;
+	}
+	return (str);
+}

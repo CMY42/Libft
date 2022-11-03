@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 15:40:18 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/03 11:31:09 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/03 12:48:17 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/03 13:27:19 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
+	unsigned int	i;
+	char			*str;
 
-	str = NULL;
-	while (*s != '\0')
+	i = 0;
+	str = (char *)malloc((ft_strlen(s)) + 1);
+	if (str == NULL)
+		return (NULL);
+	if (!s)
+		return (NULL);
+	while (s[i])
 	{
-		if (*s == (char)c)
-			str = (char *)s;
-		s++;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	if (*s == (char)c)
-		return ((char *)s);
-	if (c == 0)
-		return ((char *)s);
-	return ((char *)str);
+	str[i] = '\0';
+	return (str);
 }
-
-/*int main ()
-{
-	char *s = "Hello World World";
-	printf("%s\n", (ft_strrchr(s, 'W')));
-	printf("%s\n", (strrchr(s, 'W')));
-}*/
