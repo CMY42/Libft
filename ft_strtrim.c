@@ -1,57 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 13:21:33 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/07 14:48:15 by cmansey          ###   ########.fr       */
+/*   Created: 2022/11/03 16:56:14 by cmansey           #+#    #+#             */
+/*   Updated: 2022/11/07 11:24:05 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_nb(int nb)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
+	int		start;
+	int		end;
+	char	*str;
 
-	i = 0;
-	if (nb <= 0)
-		i++;
-	while (nb != '\0')
-	{
-		nb = nb / 10;
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_itoa(int n)
-{
-	int				i;
-	char			*str;
-	long int		nb;
-
-	i = ft_nb(n);
-	nb = n;
-	str = malloc(i + 1);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[start]) && start <= end)
+		start++;
+	if (start > end)
+		return (ft_strdup(s1 + end + 1));
+	while (ft_strchr(set, s1[end]) && end >= 0)
+		end--;
+	str = malloc(end - start + 2);
 	if (!str)
 		return (NULL);
-	if (nb < 0)
-	{
-		*str = '-';
-		nb *= -1;
-	}
-	if (nb == 0)
-		*str = '0';
-	str[i] = '\0';
-	i--;
-	while (nb != '\0')
-	{
-		str[i] = nb % 10 + 48;
-		i--;
-		nb = nb / 10;
-	}
+	ft_strlcpy(str, &s1[start], end - start + 2);
 	return (str);
 }
