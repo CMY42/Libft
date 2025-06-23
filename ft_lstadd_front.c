@@ -6,7 +6,7 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 13:17:05 by cmansey           #+#    #+#             */
-/*   Updated: 2025/05/29 13:30:03 by cmansey          ###   ########.fr       */
+/*   Updated: 2025/06/23 19:26:22 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (lst && new) //pour gere le cas ou new est NULL et adresse lst pas valide
-    {
-        new->next = *lst;
-        *lst = new;
-    }
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
 
 /*
@@ -31,9 +31,9 @@ int main(void)
     t_list *new_node = ft_lstnew("Node 1");
     printf("=== Test 1 ===\n");
     ft_lstadd_front(&head, new_node);
-    printf("Head content: %s (attendu: Node 1)\n", (char *)head->content);
+    printf("Head content: %s (ex: Node 1)\n", (char *)head->content);
     if (head->next)
-        printf("Next content: %s (attendu: Node 2)\n", (char *)head->next->content);
+        printf("Next content: %s (ex: Node 2)\n", (char *)head->next->content);
     else
         printf("ERREUR: head->next est NULL\n");
     free(head->next); // Libère "Node 2"
@@ -46,8 +46,8 @@ int main(void)
     ft_lstadd_front(&empty_list, node3);
     if (empty_list)
     {
-        printf("Head content: %s (attendu: Node 3)\n", (char *)empty_list->content);
-        printf("Next: %p (attendu: NULL)\n", (void *)empty_list->next);
+        printf("Head content: %s (ex: Node 3)\n", (char *)empty_list->content);
+        printf("Next: %p (ex: NULL)\n", (void *)empty_list->next);
         free(empty_list);
     }
     else

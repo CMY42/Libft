@@ -6,7 +6,7 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:03:49 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/02 16:56:06 by cmansey          ###   ########.fr       */
+/*   Updated: 2025/06/23 19:27:08 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if (s1[i] != s2[i])
 			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-			i++;
+		i++;
 	}
 	return (0);
 }

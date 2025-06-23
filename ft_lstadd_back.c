@@ -6,7 +6,7 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 18:09:19 by cmansey           #+#    #+#             */
-/*   Updated: 2025/06/22 18:25:05 by cmansey          ###   ########.fr       */
+/*   Updated: 2025/06/23 19:25:02 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list	*last;
+	t_list	*last;
 
-    if (!lst || !new) // verifies if lst or new is NULL
-        return ;
-    if (*lst == NULL) // si lst est NULL, new devient le premier élément
-    {
-        *lst = new;
-        return ;
-    }
-    last = *lst; // cas ou lst n'est pas NULL on va chercher le dernier élément
-    while (last->next != NULL)
-        last = last->next;
-    last->next = new;
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = *lst;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
 }
 
-/*// Fonction utilitaire pour afficher la liste
+/*
+// Fonction utilitaire pour afficher la liste
 void print_list(t_list *lst) {
     int i = 0;
     while (lst) {
@@ -68,6 +69,4 @@ int main(void)
         head = tmp;
     }
     return 0;
-}
- */
-
+}*/

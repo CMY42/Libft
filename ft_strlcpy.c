@@ -6,7 +6,7 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:53:38 by cmansey           #+#    #+#             */
-/*   Updated: 2022/11/03 17:40:44 by cmansey          ###   ########.fr       */
+/*   Updated: 2025/06/23 19:27:24 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	{
 		while (sc[i] != '\0' && i < dstsize - 1)
 		{
-				dst[i] = sc[i];
-				i++;
+			dst[i] = sc[i];
+			i++;
 		}
 	}
 	dst[i] = '\0';

@@ -6,7 +6,7 @@
 /*   By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 17:36:40 by cmansey           #+#    #+#             */
-/*   Updated: 2025/06/22 17:50:55 by cmansey          ###   ########.fr       */
+/*   Updated: 2025/06/23 19:29:04 by cmansey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
-    int	count;
+	int	count;
 
-    count = 0;
-    while (lst != NULL)
-    {
-        count++;
-        lst = lst->next;
-    }
-    return (count);
+	count = 0;
+	while (lst != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }
 
 /*int main(void)

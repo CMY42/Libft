@@ -6,7 +6,7 @@
 #    By: cmansey <marvin@42lausanne.ch>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 12:01:18 by cmansey           #+#    #+#              #
-#    Updated: 2022/11/07 11:07:38 by cmansey          ###   ########.fr        #
+#    Updated: 2025/06/23 17:28:41 by cmansey          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ bonus: $(OBJS) $(BONUS_SRCS:.c=.o)
 	$(AR) $(NAME) $(OBJS) $(BONUS_SRCS:.c=.o)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_SRCS:.c=.o)
 
 fclean: clean
 	$(RM) $(NAME)
